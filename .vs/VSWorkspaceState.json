@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\api-filme-exemplo",
+    "\\api-filme-exemplo\\Models",
+    "\\api-filme-exemplo\\Models\\Filme",
+    "\\api-filme-exemplo\\Models\\Filme\\Entity",
+    "\\api-filme-exemplo\\Models\\Filme\\Profiles"
+  ],
+  "SelectedNode": "\\api-filme-exemplo\\Models\\Filme\\Profiles\\FilmeProfile.cs",
+  "PreviewInSolutionExplorer": false
+}

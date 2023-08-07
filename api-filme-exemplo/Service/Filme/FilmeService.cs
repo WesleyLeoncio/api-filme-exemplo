@@ -39,7 +39,7 @@ public class FilmeService
     
     public FilmeResponseModificacao AtualizarFilme(FilmeUpdateRequest updateRequest)
     {
-        var filme = _context.FilmeBd!.FirstOrDefault(filme => filme.Id == updateRequest.Id);
+        var filme = GetFilmeId(updateRequest.Id);
         _mapper.Map(updateRequest, filme);
         _context.SaveChanges();
         return _mapper.Map<FilmeResponseModificacao>(filme);
@@ -47,11 +47,17 @@ public class FilmeService
 
     public void DeletarFilme(int id)
     {
-        var filme = _context.FilmeBd!.FirstOrDefault(filme => filme.Id == id);
-        //TODO EXCEÇÃO
+        var filme = GetFilmeId(id);
         _context.FilmeBd!.Remove(filme);
         _context.SaveChanges();
     }
- 
+
+
+    private Models.Filme.Entity.Filme GetFilmeId(int id)
+    {
+        var filme = _context.FilmeBd!.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) throw new Exception("Filme não encontrado");
+        return filme;
+    }
     
 }

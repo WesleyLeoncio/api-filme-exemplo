@@ -21,7 +21,7 @@ public class FilmeController : ControllerBase
 
    [HttpGet]
    public IEnumerable<FilmeResponse> RecuperaFilmes([FromQuery] int skip = 0,
-      [FromQuery] int take = 50)
+      [FromQuery] int take = 10)
    {
       return _service.ListarFilmes();
    }
@@ -30,7 +30,6 @@ public class FilmeController : ControllerBase
    public IActionResult DetalharFilme(int id)
    {
      FilmeResponseDetalhado filme =  _service.ListarFilme(id);
-     if (filme == null) return NotFound();
      return Ok(filme);
    }
    

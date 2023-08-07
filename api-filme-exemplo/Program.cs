@@ -1,4 +1,6 @@
 using api_filme_exemplo.Data;
+using api_filme_exemplo.Repository;
+using api_filme_exemplo.Repository.interfaces;
 using api_filme_exemplo.Service.Filme;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,8 @@ builder.Services.AddEntityFrameworkNpgsql()
         options.UseNpgsql(builder.Configuration.GetConnectionString("Connection")));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddTransient<IFilmeRepository, FilmeRepository>();
 
 builder.Services.AddScoped<FilmeService>();
 

@@ -1,4 +1,5 @@
 ﻿
+using api_filme_exemplo.Exceptions;
 using api_filme_exemplo.Models.Filme.Request;
 using api_filme_exemplo.Models.Filme.Response;
 using api_filme_exemplo.Repository.interfaces;
@@ -55,7 +56,7 @@ public class FilmeService
     private Models.Filme.Entity.Filme VerificarFilme(int id)
     {
         var filme = _repository.GetById(id);
-        if (filme == null) throw new Exception("Filme não encontrado!");
+        if (filme == null) throw new NotFoundException("Filme não encontrado!");
         return filme;
     }   
     

@@ -1,4 +1,5 @@
 using api_filme_exemplo.Data;
+using api_filme_exemplo.Middlewares;
 using api_filme_exemplo.Repository;
 using api_filme_exemplo.Repository.interfaces;
 using api_filme_exemplo.Service.Filme;
@@ -30,6 +31,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware(typeof(GlobalErrorHandlingMiddleware));
 
 app.UseHttpsRedirection();
 

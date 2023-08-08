@@ -1,6 +1,4 @@
-using System.Data;
-using System.Net;
-using System.Text.Json;
+
 using api_filme_exemplo.Exceptions;
 
 namespace api_filme_exemplo.Middlewares;
@@ -8,10 +6,13 @@ namespace api_filme_exemplo.Middlewares;
 public class GlobalErrorHandlingMiddleware
 {
     private readonly RequestDelegate _next;
+
+    private readonly IEnumerable<IErrorResultTask> _validarException;
     
-    public GlobalErrorHandlingMiddleware(RequestDelegate next)
+    public GlobalErrorHandlingMiddleware(RequestDelegate next, IEnumerable<IErrorResultTask> validarException)
     {
         _next = next;
+        this._validarException = validarException;
     }
 
     public async Task InvokeAsync(HttpContext context)
@@ -26,28 +27,20 @@ public class GlobalErrorHandlingMiddleware
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         context.Response.ContentType = "application/json";
 
-        var exceptionType = exception.GetType();
-
-        if (exceptionType == typeof(NotFoundException))
-        {
-            return Result(context, (int)HttpStatusCode.NotFound, exception.Message);
-        }else if (exceptionType == typeof(DBConcurrencyException))
-        {
-            return Result(context, (int)HttpStatusCode.NotFound, exception.Message);
-        }
+        ErrorExceptionResult error = new ErrorExceptionResult(context, exception);
         
-        return Result(context,(int)HttpStatusCode.InternalServerError,exception.Message);
+       foreach (var errorResultTask in _validarException)
+       {
+           Task? erroResult = errorResultTask.ValidarException(error);
+           if (erroResult != null) return erroResult;
+       }
 
+       return error.GetResultPadrao();
     }
-
-    private static Task Result(HttpContext context, int status, string msg)
-    {
-        string result = JsonSerializer.Serialize(new { status, msg});
-        context.Response.StatusCode = status;
-        return context.Response.WriteAsync(result);
-    }
+    
+ 
 }

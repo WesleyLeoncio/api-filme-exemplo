@@ -1,4 +1,7 @@
+
 using api_filme_exemplo.Data;
+using api_filme_exemplo.Exceptions;
+using api_filme_exemplo.Exceptions.TratarException;
 using api_filme_exemplo.Middlewares;
 using api_filme_exemplo.Repository;
 using api_filme_exemplo.Repository.interfaces;
@@ -21,7 +24,10 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddTransient<IFilmeRepository, FilmeRepository>();
 
+builder.Services.AddTransient<IErrorResultTask, TratarNotFoundException>();
+
 builder.Services.AddScoped<FilmeService>();
+
 
 var app = builder.Build();
 

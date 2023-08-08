@@ -20,35 +20,35 @@ public class FilmeController : ControllerBase
     
 
    [HttpGet]
-   public IEnumerable<FilmeResponse> RecuperaFilmes([FromQuery] int skip = 0,
+   public IEnumerable<FilmeResponse> ListarFilmes([FromQuery] int skip = 0,
       [FromQuery] int take = 10)
    {
-      return _service.ListarFilmes();
+      return _service.ListarTodosFilmes();
    }
    
    [HttpGet("{id}")]
    public IActionResult DetalharFilme(int id)
    {
-     FilmeResponseDetalhado filme =  _service.ListarFilme(id);
+     FilmeResponseDetalhado filme =  _service.ListarFilmePorId(id);
      return Ok(filme);
    }
    
    [HttpPost]
-   public IActionResult AdicionarFilme([FromBody] FilmeCreateRequest filmeCreate)
+   public IActionResult CadastrarFilme([FromBody] FilmeCreateRequest filmeCreate)
    {
       FilmeResponseDetalhado response = _service.AdicionarFilme(filmeCreate);
       return CreatedAtAction(nameof(DetalharFilme), new { id = response.Id }, response);
    }
    
    [HttpPut]
-   public IActionResult AtualizarFilme([FromBody] FilmeUpdateRequest filmeUpdateRequest)
+   public IActionResult EditarFilme([FromBody] FilmeUpdateRequest filmeUpdateRequest)
    {
       FilmeResponseModificacao response = _service.AtualizarFilme(filmeUpdateRequest);
       return Ok(response);
    }
    
    [HttpDelete("{id}")]
-   public IActionResult DeletarFilme(int id)
+   public IActionResult ExcluirFilme(int id)
    {
       _service.DeletarFilme(id);
       return NoContent();

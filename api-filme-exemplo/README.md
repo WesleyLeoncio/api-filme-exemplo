@@ -9,6 +9,7 @@ O desenvolvimento dessa API tem como objetivo criar uma aplicação que seja cap
 - ASP.NET Core
 - SGBD (PostGresSQL)
 - Paginação
+- Tratamento De Erros Globais Com Padrão Strategy.  
 
 
 ### O QUE FOI DESENVOLVIDO

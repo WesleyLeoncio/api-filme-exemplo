@@ -1,5 +1,4 @@
-﻿
-using api_filme_exemplo.Exceptions;
+﻿using api_filme_exemplo.Infra.Exceptions;
 using api_filme_exemplo.Models.Filme.Request;
 using api_filme_exemplo.Models.Filme.Response;
 using api_filme_exemplo.Repository.interfaces;

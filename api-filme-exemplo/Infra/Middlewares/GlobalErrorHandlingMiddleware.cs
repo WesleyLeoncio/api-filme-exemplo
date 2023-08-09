@@ -1,5 +1,5 @@
-
-using api_filme_exemplo.Exceptions;
+using api_filme_exemplo.Infra.Exceptions;
+using api_filme_exemplo.Infra.Exceptions.Interface;
 
 namespace api_filme_exemplo.Infra.Middlewares;
 

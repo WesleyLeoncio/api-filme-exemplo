@@ -1,4 +1,4 @@
-namespace api_filme_exemplo.Exceptions;
+namespace api_filme_exemplo.Infra.Exceptions;
 
 public class NotFoundException : Exception
 {

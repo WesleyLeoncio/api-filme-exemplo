@@ -1,5 +1,5 @@
 using System.Text.Json;
-using api_filme_exemplo.Exceptions;
+using api_filme_exemplo.Infra.Exceptions.Interface;
 
 namespace api_filme_exemplo.Infra.Exceptions.TratarException;
 

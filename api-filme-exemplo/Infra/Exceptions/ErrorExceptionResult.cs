@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace api_filme_exemplo.Exceptions;
+namespace api_filme_exemplo.Infra.Exceptions;
 
 public class ErrorExceptionResult
 {

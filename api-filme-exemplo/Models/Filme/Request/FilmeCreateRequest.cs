@@ -21,18 +21,5 @@ public class FilmeCreateRequest
 
     [Required(ErrorMessage = "O categoria do filme é obrigatório")]
     public string? Categoria { get; set; }
-
-    public FilmeCreateRequest(string? nome, string? descricao, DateTime dataLancamento, string? duracao, string? imagem, string? categoria)
-    {
-        Nome = nome;
-        Descricao = descricao;
-        DataLancamento = dataLancamento;
-        Duracao = duracao;
-        Imagem = imagem;
-        Categoria = categoria;
-    }
-
-    public FilmeCreateRequest()
-    {
-    }
+    
 }

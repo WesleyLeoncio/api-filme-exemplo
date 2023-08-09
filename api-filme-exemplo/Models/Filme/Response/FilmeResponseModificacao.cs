@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace api_filme_exemplo.Models.Filme.Response;
+﻿namespace api_filme_exemplo.Models.Filme.Response;
 
 public class FilmeResponseModificacao
 {

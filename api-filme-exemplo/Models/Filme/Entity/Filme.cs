@@ -40,7 +40,5 @@ public class Filme
         Categoria = categoria;
     }
 
-    public Filme()
-    {
-    }
+    public Filme(){}
 }

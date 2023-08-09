@@ -1,7 +1,7 @@
 
 using api_filme_exemplo.Exceptions;
 
-namespace api_filme_exemplo.Middlewares;
+namespace api_filme_exemplo.Infra.Middlewares;
 
 public class GlobalErrorHandlingMiddleware
 {

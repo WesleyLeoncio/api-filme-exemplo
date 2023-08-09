@@ -1,7 +1,7 @@
 ﻿using api_filme_exemplo.Models.Filme.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace api_filme_exemplo.Data;
+namespace api_filme_exemplo.Infra.Data;
 
 public class ConectionContext : DbContext
 {

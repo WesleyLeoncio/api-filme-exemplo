@@ -1,6 +1,6 @@
 using api_filme_exemplo.Exceptions;
-using api_filme_exemplo.Exceptions.TratarException;
 using api_filme_exemplo.Infra.Data;
+using api_filme_exemplo.Infra.Exceptions.TratarException;
 using api_filme_exemplo.Infra.Middlewares;
 using api_filme_exemplo.Repository;
 using api_filme_exemplo.Repository.interfaces;

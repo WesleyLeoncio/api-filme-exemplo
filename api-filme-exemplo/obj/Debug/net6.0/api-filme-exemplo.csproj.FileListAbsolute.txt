@@ -54,3 +54,8 @@ C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exem
 C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\obj\Debug\net6.0\EFCoreNpgsqlNetTopologySuite.cs
 C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\obj\Debug\net6.0\staticwebassets\msbuild.api-filme-exemplo.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\obj\Debug\net6.0\staticwebassets\msbuild.build.api-filme-exemplo.props
+C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.api-filme-exemplo.props
+C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.api-filme-exemplo.props
+C:\Users\wesle\OneDrive\Documentos\PROJETOS\GIT\api-filme-exemplo\api-filme-exemplo\obj\Debug\net6.0\staticwebassets.pack.json

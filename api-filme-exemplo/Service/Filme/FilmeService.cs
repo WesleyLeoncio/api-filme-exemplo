@@ -1,13 +1,14 @@
 ﻿using api_filme_exemplo.Infra.Exceptions;
 using api_filme_exemplo.Models.Filme.Request;
 using api_filme_exemplo.Models.Filme.Response;
-using api_filme_exemplo.Repository.interfaces;
+using api_filme_exemplo.Repository.Interfaces;
+using api_filme_exemplo.Service.Interfaces;
 using AutoMapper;
 
 
 namespace api_filme_exemplo.Service.Filme;
 
-public class FilmeService
+public class FilmeService : IFilmeService
 {
     
     private IMapper _mapper;

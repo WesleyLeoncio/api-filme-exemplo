@@ -1,7 +1,7 @@
 ﻿
 using api_filme_exemplo.Models.Filme.Request;
 using api_filme_exemplo.Models.Filme.Response;
-using api_filme_exemplo.Service.Filme;
+using api_filme_exemplo.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_filme_exemplo.Controllers;
@@ -11,9 +11,9 @@ namespace api_filme_exemplo.Controllers;
 public class FilmeController : ControllerBase
 {
 
-   private FilmeService _service;
+   private IFilmeService _service;
 
-   public FilmeController(FilmeService service)
+   public FilmeController(IFilmeService service)
    {
       _service = service;
    }

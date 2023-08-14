@@ -1,6 +1,6 @@
 ﻿using api_filme_exemplo.Infra.Data;
 using api_filme_exemplo.Models.Filme.Entity;
-using api_filme_exemplo.Repository.interfaces;
+using api_filme_exemplo.Repository.Interfaces;
 
 namespace api_filme_exemplo.Repository;
 

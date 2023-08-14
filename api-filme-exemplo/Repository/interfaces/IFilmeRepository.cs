@@ -1,6 +1,6 @@
 ﻿using api_filme_exemplo.Models.Filme.Entity;
 
-namespace api_filme_exemplo.Repository.interfaces;
+namespace api_filme_exemplo.Repository.Interfaces;
 
 public interface IFilmeRepository
 {

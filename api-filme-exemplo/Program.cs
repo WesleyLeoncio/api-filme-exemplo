@@ -3,8 +3,9 @@ using api_filme_exemplo.Infra.Exceptions.Interface;
 using api_filme_exemplo.Infra.Exceptions.TratarException;
 using api_filme_exemplo.Infra.Middlewares;
 using api_filme_exemplo.Repository;
-using api_filme_exemplo.Repository.interfaces;
+using api_filme_exemplo.Repository.Interfaces;
 using api_filme_exemplo.Service.Filme;
+using api_filme_exemplo.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +26,7 @@ builder.Services.AddTransient<IFilmeRepository, FilmeRepository>();
 
 builder.Services.AddTransient<IErrorResultTask, TratarNotFoundException>();
 
-builder.Services.AddScoped<FilmeService>();
+builder.Services.AddTransient<IFilmeService, FilmeService>();
 
 
 var app = builder.Build();

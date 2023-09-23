@@ -5,7 +5,7 @@ namespace api_filme_exemplo.Service.Interfaces;
 
 public interface IFilmeService
 {
-    IEnumerable<FilmeResponse> ListarTodosFilmes(int skip = 0, int take = 10);
+    IEnumerable<FilmeResponseDetalhado> ListarTodosFilmes(int skip = 0, int take = 10);
 
     FilmeResponseDetalhado ListarFilmePorId(int id);
 

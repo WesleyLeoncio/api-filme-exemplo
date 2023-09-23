@@ -21,9 +21,9 @@ public class FilmeService : IFilmeService
         _repository = repository;
     }
 
-    public IEnumerable<FilmeResponse> ListarTodosFilmes(int skip = 0, int take = 10)
+    public IEnumerable<FilmeResponseDetalhado> ListarTodosFilmes(int skip = 0, int take = 10)
     {
-        return _mapper.Map<List<FilmeResponse>>(_repository.GetAll(skip, take));
+        return _mapper.Map<List<FilmeResponseDetalhado>>(_repository.GetAll(skip, take));
     }
 
     public FilmeResponseDetalhado ListarFilmePorId(int id)

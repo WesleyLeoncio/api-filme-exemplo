@@ -20,7 +20,7 @@ public class FilmeController : ControllerBase
     
 
    [HttpGet]
-   public IEnumerable<FilmeResponse> ListarFilmes([FromQuery] int skip = 0,
+   public IEnumerable<FilmeResponseDetalhado> ListarFilmes([FromQuery] int skip = 0,
       [FromQuery] int take = 10)
    {
       return _service.ListarTodosFilmes();
